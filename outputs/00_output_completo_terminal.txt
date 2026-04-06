@@ -1,0 +1,384 @@
+================================================================
+OUTPUT COMPLETO — SCRIPTS 02-05
+Proyecto: Incidentes Drones Ucrania-Rusia 2025-2026
+Fecha ejecución: 2026-04-06 16:19:38
+================================================================
+
+================================================================
+SCRIPT 02 — PROCESAMIENTO ACLED v3
+================================================================
+============================================================
+PROCESAMIENTO ACLED — UCRANIA 2025-2026  (v3)
+============================================================
+✓ Cargado: acled_ukraine_2025_2026.csv  (400 filas)
+  (no encontrado, se omite): acled_ukraine_2026.csv
+
+✓ Total registros tras fusión  : 400
+  Rango fechas                 : 2025-01-01 → 2025-12-30
+
+✓ Total eventos drone/aéreo filtrados : 400
+  → Rusia atacando Ucrania  (RU->UA) : 100
+  → Ucrania atacando Rusia  (UA->RU) : 106
+  → Intercepciones                   : 194
+  → No determinado                   : 0
+
+── Tipo de arma ──
+tipo_arma
+Shahed/Geran                       87
+Drone pesado UA (R-18/BabaYaga)    59
+Drone genérico                     46
+FPV                                43
+Crucero                            34
+Drone rec. UA (SHARK/Leleka)       30
+Balístico                          29
+UJ-22 (ala fija UA)                25
+Hipersónico                        24
+Lancet                             23
+
+── Top 10 regiones afectadas ──
+admin1
+Kharkiv           36
+Odesa             35
+Sumy              34
+Kherson           33
+Belgorod          33
+Dnipropetrovsk    33
+Bryansk           33
+Chernihiv         31
+Donetsk           31
+Zaporizhia        30
+
+── Top 5 oblasts rusos (UA->RU) ──
+admin1
+Belgorod      19
+Bryansk       16
+Kursk         13
+Rostov        11
+Zaporizhia     6
+
+── Intercepciones por tipo de arma ──
+tipo_arma
+Crucero           34
+Shahed/Geran      33
+Balístico         29
+FPV               26
+Drone genérico    25
+Hipersónico       24
+Lancet            23
+
+✓ acled_drones_limpio.csv       → 400 filas
+✓ acled_drones_ofensivo_RU.csv  → 100 filas
+✓ acled_drones_ofensivo_UA.csv  → 106 filas
+✓ acled_intercepciones.csv      → 194 filas  ← NUEVO
+✓ 05_acled_intercepciones_resumen.csv guardado
+✓ Tablas resumen guardadas
+
+✓ Figura 6 → 06_acled_eventos_diarios.png
+✓ Figura 7 → 07_acled_regiones.png
+✓ Figura 8 → 08_acled_tipos_arma.png
+
+============================================================
+COMPLETADO
+============================================================
+Total eventos filtrados : 400
+  RU->UA                : 100
+  UA->RU                : 106
+  Intercepciones        : 194  ← v3
+Bajas totales           : 802
+Rango temporal          : 2025-01-01 → 2025-12-30
+Oblasts cubiertos       : 13
+
+── Cambios v3 vs v2 ──
+  • Oblasts rusos reclasificados como UA->RU: 59 eventos
+  • Intercepciones detectadas desde notas: 194
+  • 'Drone genérico' residual: 46 (11.5%)
+
+Próximo: scripts/03_series_temporales.py
+
+── Enriquecimiento con Petro/Kaggle dataset ──
+  ✓ 1,605 registros Petro cargados
+  ✓ Rango: 2025-01-01 → 2026-04-04
+  ✓ Tipos identificados:
+tipo_arma_petro
+Shahed/Geran             477
+Drone rec. RU (Orlan)    418
+Drone genérico           286
+Balístico                243
+Crucero                   91
+Hipersónico               46
+Lancet                    44
+
+  ACLED 'Drone genérico': 46 eventos (11.5%)
+  Petro 'Unknown': 286 registros — 82.2% identificados
+  → Para análisis cuantitativo de tipos usar Petro dataset directamente
+  ✓ petro_diario_por_tipo.csv guardado
+
+================================================================
+SCRIPT 03 — SERIES TEMPORALES
+================================================================
+/home/user/workspace/scripts/03_series_temporales.py:179: InterpolationWarning: The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is smaller than the p-value returned.
+
+  kpss_stat, kpss_p, *_ = kpss(s, regression="c", nlags="auto")
+/home/user/workspace/scripts/03_series_temporales.py:179: InterpolationWarning: The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is smaller than the p-value returned.
+
+  kpss_stat, kpss_p, *_ = kpss(s, regression="c", nlags="auto")
+/home/user/workspace/scripts/03_series_temporales.py:179: InterpolationWarning: The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is smaller than the p-value returned.
+
+  kpss_stat, kpss_p, *_ = kpss(s, regression="c", nlags="auto")
+/home/user/workspace/scripts/03_series_temporales.py:179: InterpolationWarning: The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is smaller than the p-value returned.
+
+  kpss_stat, kpss_p, *_ = kpss(s, regression="c", nlags="auto")
+/home/user/workspace/scripts/03_series_temporales.py:179: InterpolationWarning: The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is smaller than the p-value returned.
+
+  kpss_stat, kpss_p, *_ = kpss(s, regression="c", nlags="auto")
+/home/user/workspace/scripts/03_series_temporales.py:179: InterpolationWarning: The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is smaller than the p-value returned.
+
+  kpss_stat, kpss_p, *_ = kpss(s, regression="c", nlags="auto")
+============================================================
+SERIES TEMPORALES — DRONES 2025-2026  (v2)
+============================================================
+
+[1/7] Cargando datos...
+  ✓ Petro diario: 459 obs. (01 Jan 2025 → 04 Apr 2026)
+  ✓ ISIS-Online mensual: 15 obs.
+  ✓ ACLED mensual: 12 obs.
+
+[2/7] Tests de estacionariedad...
+  Lanzados diario (total)                   ADF p=0.0282  ✓ estacionaria
+  Destruidos diario (total)                 ADF p=0.8162  ✗ NO estacionaria
+  Hits diario (total)                       ADF p=0.0704  ✗ NO estacionaria
+  Tasa intercepción diaria                  ADF p=0.6933  ✗ NO estacionaria
+  Lanzados Shahed diario                    ADF p=0.0070  ✓ estacionaria
+  Lanzamientos mensuales (ISIS)             ADF p=1.0000  ✗ NO estacionaria
+  ✓ 06_estacionariedad.csv
+
+[3/7] Descomposición STL (serie diaria)...
+  ✓ STL diario period=7
+  ✓ Figura 9 → 09_stl_descomposicion.png
+
+[4/7] Rupturas estructurales...
+  Ruptura (semanal): 08 Mar 2026  F=6.85  p=0.0020
+  ✓ Figura 10 → 10_rupturas_estructurales.png
+
+[5/7] ARIMA (serie diaria Shahed)...
+  ARIMA(2, 1, 1) manual  AIC=960.77
+  ✓ 03_arima_summary.txt
+  ✓ Figura 11 → 11_arima_forecast.png
+
+[6/7] VAR multivariante (semanal)...
+  ⚠  VAR: 3-th leading minor of the array is not positive definite
+  ✓ 04_var_summary.txt
+  ✓ Figura 12 → 12_var_impulso_respuesta.png
+
+[7/7] Markov Switching + CCF ACLED...
+  Markov AR(1) k=2  AIC=715.94  BIC=731.16
+  ✓ 05_markov_summary.txt
+  ✓ Figura 13 → 13_markov_switching.png
+  ✓ CCF ACLED  n=12 meses  6 lags
+  ✓ Figura 14 → 14_ccf_acled.png
+  ✓ Figura 15 → 15_comparativa_fuentes.png
+
+============================================================
+COMPLETADO — SCRIPT 03 v2
+============================================================
+
+Figuras: 7/7
+  ✓ 09_stl_descomposicion.png
+  ✓ 10_rupturas_estructurales.png
+  ✓ 11_arima_forecast.png
+  ✓ 12_var_impulso_respuesta.png
+  ✓ 13_markov_switching.png
+  ✓ 14_ccf_acled.png
+  ✓ 15_comparativa_fuentes.png
+
+Hallazgos clave (datos reales):
+  • Serie diaria UA Air Force: 459 observaciones
+  • Ruptura estructural (semanal): 08 Mar 2026
+    μ₁=164 UAV/sem  →  μ₂=284 UAV/sem  (+73%)
+  • ARIMA(2, 1, 1): forecast +8 semanas disponible
+  • VAR semanal: no convergió
+  • Markov Switching: convergió
+  • CCF ACLED: calculado
+
+Próximo: scripts/04_umbral_saturacion.py (TAR/SETAR)
+
+
+================================================================
+SCRIPT 04 — UMBRAL Y SATURACIÓN
+================================================================
+============================================================
+ANÁLISIS DE UMBRAL Y SATURACIÓN — DRONES 2025-2026
+============================================================
+
+[1/8] Cargando datos...
+  ✓ Petro diario: 455 obs. con lanzados > 0
+    Rango lanzados: 3 – 832 UAV/día
+    Tasa hit media: 0.298  mediana: 0.272
+  ✓ ISIS-Online mensual: 15 obs.
+  ✓ Ataques grandes: 16 eventos
+
+  Serie de análisis: 447 obs. Shahed diario con tasa_hit válida
+
+[2/8] Exploración no lineal + LOWESS...
+  ✓ Figura 16 → 16_scatter_umbral_lowess.png
+
+[3/8] Grid search umbral óptimo τ...
+  τ óptimo (min RSS):  60 UAV/día
+  τ óptimo (max R²):   50 UAV/día
+  R² global sin umbral: 0.0647
+  R² segmentado en τ=60: 0.0642
+  ✓ Figura 17 → 17_grid_search_umbral.png
+
+[4/8] TAR — regímenes alto/bajo...
+  τ=60  bajo(n=55, μ=0.381) alto(n=392, μ=0.304)  F=8.80 p=0.0032  d=0.43
+  ✓ 08_tar_coeficientes.txt
+  ✓ Figura 18 → 18_tar_regimenes.png
+
+[5/8] Regresión segmentada...
+  Piecewise: τ=41  b1=0.00963  b2=-0.00037  R²=0.0778
+  ✓ Figura 19 → 19_regresion_segmentada.png
+
+[6/8] Ajuste función logarítmica de saturación...
+  Logarítmico: a=0.6725 b=0.0736  R²=0.0626
+  Exponencial: R²=0.0633
+  Ley potencia: R²=0.0603
+  ★ Mejor modelo: exponencial  R²=0.0633
+  ✓ Figura 20 → 20_curva_logaritmica.png
+
+[7/8] Análisis de supervivencia de la defensa...
+  Tasa de fallo defensivo por cuartil de volumen:
+  cuartil  lanzados_media  tasa_fallo  tasa_interc_media
+Q1 (bajo)       59.223214    0.339286           0.633536
+       Q2      100.672566    0.327434           0.661212
+       Q3      142.572727    0.281818           0.707314
+Q4 (alto)      346.000000    0.321429           0.744392
+  ✓ Figura 21 → 21_supervivencia_defensa.png
+
+[8/8] Tablas de resultados...
+  ✓ 07_umbral_resultados.csv
+  ✓ 09_comparativa_regimenes.csv
+
+============================================================
+COMPLETADO — SCRIPT 04 UMBRAL SATURACIÓN
+============================================================
+
+Figuras: 6/6
+  ✓ 16_scatter_umbral_lowess.png
+  ✓ 17_grid_search_umbral.png
+  ✓ 18_tar_regimenes.png
+  ✓ 19_regresion_segmentada.png
+  ✓ 20_curva_logaritmica.png
+  ✓ 21_supervivencia_defensa.png
+
+Hallazgos clave:
+  • Umbral óptimo τ (min RSS):  60 UAV/día
+  • Umbral óptimo τ (max R²):   50 UAV/día
+  • Umbral piecewise ajustado:  41 UAV/día
+  • Media tasa_hit  BAJO τ:     0.381  (38.1%)
+  • Media tasa_hit  ALTO τ:     0.304  (30.4%)
+  • Test F diferencia regímenes: F=8.80  p=0.0032
+  • Cohen's d: 0.428  (pequeño)
+  • Mejor modelo no lineal: exponencial  R²=0.0633
+
+Próximo: scripts/05_analisis_multivariante.py (PCA/MANOVA)
+
+
+================================================================
+SCRIPT 05 — ANÁLISIS MULTIVARIANTE
+================================================================
+============================================================
+ANÁLISIS MULTIVARIANTE — DRONES 2025-2026
+============================================================
+
+[1/8] Construyendo matriz multivariante semanal...
+  ✓ Matriz multivariante: 66 semanas × 8 variables
+    Período: 2024-12-30 → 2026-03-30
+
+[2/8] Mapa de correlaciones...
+  ✓ Figura 22 → 22_heatmap_correlacion.png
+  Correlaciones más altas:
+    Vol. total/sem ↔ Intensidad diaria: r=1.000
+    Tasa intercep. ↔ Tasa hit Shahed: r=-1.000
+    Vol. total/sem ↔ Vol. Shahed: r=0.990
+    Vol. Shahed ↔ Intensidad diaria: r=0.990
+    Tasa hit Shahed ↔ Ratio Shahed/total: r=0.523
+
+[3/8] PCA — componentes principales...
+  Componentes para 80% varianza: 3
+  Componentes para 90% varianza: 4
+  PC1: 0.491 (49.1%)  acum=49.1%
+  PC2: 0.234 (23.4%)  acum=72.4%
+  PC3: 0.123 (12.3%)  acum=84.8%
+  PC4: 0.105 (10.5%)  acum=95.3%
+  PC5: 0.047 (4.7%)  acum=100.0%
+  PC6: 0.000 (0.0%)  acum=100.0%
+  ✓ Figura 23 → 23_pca_varianza_explicada.png
+
+[4/8] Biplot PCA...
+  ✓ Figura 24 → 24_pca_biplot.png
+
+[5/8] Clustering jerárquico...
+  Silhouette scores: k=2: 0.365  k=3: 0.380  k=4: 0.351  k=5: 0.359
+  k óptimo (silhouette): 3
+  Distribución clusters: {np.int32(1): np.int64(35), np.int32(2): np.int64(17), np.int32(3): np.int64(14)}
+  ✓ Figura 25 → 25_clustering_jerarquico.png
+
+[6/8] MANOVA — diferencia multivariante entre clusters...
+  ✓ MANOVA ejecutado
+  Vol. total           F=23.62  p=0.0000  ★★★
+  Tasa intercep.       F=237.10  p=0.0000  ★★★
+  Ratio Shahed         F=7.92  p=0.0009  ★★★
+  Nº ataques           F=19.93  p=0.0000  ★★★
+  Vol. misiles         F=11.18  p=0.0001  ★★★
+  ✓ 11_manova_resultados.txt
+
+[7/8] Radar chart — perfiles de cluster...
+  ✓ Figura 26 → 26_manova_perfiles.png
+
+[8/8] LDA discriminante + tablas...
+  LDA cross-val accuracy: 0.956 ± 0.058
+  ✓ Figura 27 → 27_lda_discriminante.png
+  ✓ 10_pca_loadings.csv
+  ✓ 12_clusters_descripcion.csv
+
+============================================================
+COMPLETADO — SCRIPT 05 ANÁLISIS MULTIVARIANTE
+============================================================
+
+Figuras: 6/6
+  ✓ 22_heatmap_correlacion.png
+  ✓ 23_pca_varianza_explicada.png
+  ✓ 24_pca_biplot.png
+  ✓ 25_clustering_jerarquico.png
+  ✓ 26_manova_perfiles.png
+  ✓ 27_lda_discriminante.png
+
+Hallazgos clave:
+  • Semanas analizadas:          66
+  • Variables multivariantes:    8
+  • PC1 varianza explicada:      49.1%
+  • PC1+PC2 varianza explicada:  72.4%
+  • Componentes para 80% var:    3
+  • Clusters óptimos (silhouette): k=3
+  • LDA accuracy (CV):           95.6% ± 5.8%
+
+Perfiles de cluster:
+  Cluster 1 (n=35): 1398 UAV/sem | interc=84.7% | Shahed=89.7%
+  Cluster 2 (n=17): 691 UAV/sem | interc=57.9% | Shahed=93.1%
+  Cluster 3 (n=14): 1342 UAV/sem | interc=49.6% | Shahed=93.9%
+
+ANOVA univariante por variable:
+  Vol. total             F=23.62  p=0.0000  η²=0.428  ★★★
+  Tasa intercep.         F=237.10  p=0.0000  η²=0.883  ★★★
+  Ratio Shahed           F=7.92  p=0.0009  η²=0.201  ★★★
+  Nº ataques             F=19.93  p=0.0000  η²=0.388  ★★★
+  Vol. misiles           F=11.18  p=0.0001  η²=0.262  ★★★
+
+Próximo: INFORME_MAESTRO (actualización) o entrega final.
+
