@@ -26,6 +26,8 @@ PIPELINE = [
     ("06", "06_retroalimentacion_tactica.py", "Retroalimentación táctica (RL/Granger)"),
     ("07", "07_variables_externas.py",   "Variables externas (meteo + red eléctrica)"),
     ("08", "08_analisis_horario.py",     "Análisis horario / ventanas vulnerabilidad"),
+    ("09", "09_doctrina_combinada.py",    "Doctrina combinada (ACLED + presión táctica)"),
+    ("10", "10_teatro_espana.py",         "Teatro España: saturación + amenaza regional"),
 ]
 
 def run_script(num, filename, descripcion):
