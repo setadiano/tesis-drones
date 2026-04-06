@@ -1,0 +1,9 @@
+pais,sistema,tipo,unidades,vcruise_kmh,alcance_km,payload_kg,endurance_h,armado,origen,estado,capacidad_simultan,base_norte,dist_ceuta_km,dist_melilla_km,nota
+Marruecos,Bayraktar TB2,MALE UCAV,23,130,300,150,27,1,Turquía,Operativo/combate activo,8,1,35.5,81.3,TB2 base Tetuán confirmada
+Marruecos,Bayraktar Akinci,MALE UCAV estratégico,3,220,7500,1500,24,1,Turquía,Entrega iniciada feb.2025,2,1,35.5,81.3,"Misil SOM antibuque, radar AESA"
+Marruecos,Wing Loong II,MALE UCAV,4,150,1000,480,32,1,China,Operativo (Sahara Occidental),3,0,486.0,582.0,"SATCOM, alcance >1000km"
+Marruecos,ThunderB/SpyX,Munición merodeadora,150,160,100,10,2,1,Israel,Operativo (lote 2021+2024),30,1,35.5,7.6,Base Gurugú a 7.6km de Melilla
+Marruecos,IAI Hermes 900,MALE ISR/UCAV,4,220,1000,300,36,1,Israel,Operativo,2,1,486.0,486.0,ISR principal
+Argelia,CASC CH-4,MALE UCAV,8,150,345,345,12,1,China,Operativo,4,0,435.0,213.0,Base Orán → Melilla 213km
+Argelia,WJ-700 Falcon,HALE UCAV,4,700,2000,800,20,1,China,En pruebas finales (entregado mar.2024),2,0,435.0,213.0,Capacidad antibuque C705KD
+Argelia,Anka-S/Aksungur,MALE UCAV,16,150,300,325,24,1,Turquía,Pedido confirmado (10+6),6,0,435.0,213.0,Primer operador nordafricano Aksungur

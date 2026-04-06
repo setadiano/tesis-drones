@@ -1,0 +1,7 @@
+plaza,sistema,tipo,lanzadores,misiles_por_lanzador,cadencia_s,alcance_km,altitud_m,canales_fuego,efectividad_uav,estado,nota
+Ceuta,Mistral II/III,VSHORAD,12,2,45,8,6000,4,0.65,Operativo (moderniz. Mistral3 desde 2026),"RAMIX 30, bat. II/30"
+Ceuta,Oerlikon 35/90,AAA cañón,3,500,2,4,3000,3,0.55,Operativo,"RAMIX 30, munición AHEAD"
+Ceuta,Cervus III C-UAS,C-UAS,1,0,1,10,500,6,0.7,NO documentado en Ceuta (desplegado OTAN Este),Gap identificado
+Melilla,Mistral II/III,VSHORAD,10,2,45,8,6000,4,0.65,Operativo,"RAMIX 32, bat. II/32"
+Melilla,Oerlikon 35/90,AAA cañón,2,500,2,4,3000,2,0.55,Operativo,RAMIX 32
+Melilla,Cervus III C-UAS,C-UAS,1,0,1,10,500,6,0.7,NO documentado en Melilla,Gap crítico — Gurugú a 7.6km
