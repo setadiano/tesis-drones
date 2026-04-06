@@ -572,3 +572,73 @@ arma_vieja = df_drones[df_drones["tipo_arma"] == "Drone genérico"]
 pct_genericos = 100 * len(arma_vieja) / max(len(df_drones), 1)
 print(f"  • 'Drone genérico' residual: {len(arma_vieja):,} ({pct_genericos:.1f}%)")
 print(f"\nPróximo: scripts/03_series_temporales.py")
+
+# ════════════════════════════════════════════════════════════
+# 11. ENRIQUECIMIENTO CON PETRO/KAGGLE DATASET (v3 añadido)
+#     missile_attacks_daily.csv — Fuerza Aérea de Ucrania
+#     Resuelve el problema del "Drone genérico" cruzando por fecha
+# ════════════════════════════════════════════════════════════
+
+petro_path = DATA_R / "petro_attacks_2025_2026.csv"
+if petro_path.exists():
+    print("\n── Enriquecimiento con Petro/Kaggle dataset ──")
+    df_petro = pd.read_csv(petro_path)
+    df_petro["fecha"] = pd.to_datetime(df_petro["time_start"].str[:10], errors="coerce")
+    df_petro = df_petro.dropna(subset=["fecha"])
+
+    # Mapa de modelo Petro → tipo_arma de nuestro esquema
+    MODELO_A_TIPO = {
+        "Shahed-136/131":   "Shahed/Geran",
+        "Shahed-136":       "Shahed/Geran",
+        "Shahed-131":       "Shahed/Geran",
+        "Geran-2":          "Shahed/Geran",
+        "Geran-3":          "Shahed/Geran",
+        "Geran-5":          "Shahed/Geran",
+        "Lancet":           "Lancet",
+        "X-47 Kinzhal":     "Hipersónico",
+        "3M22 Zircon":      "Hipersónico",
+        "Kalibr":           "Crucero",
+        "X-101/X-555":      "Crucero",
+        "X-59":             "Crucero",
+        "X-59/X-69":        "Crucero",
+        "X-22":             "Crucero",
+        "Iskander-M":       "Balístico",
+        "Iskander-K":       "Balístico",
+        "Iskander-M/KN-23": "Balístico",
+        "C-300":            "Balístico",
+        "C-300/C-400":      "Balístico",
+        "Orlan-10":         "Drone rec. RU (Orlan)",
+        "Supercam":         "Drone rec. RU (Orlan)",
+        "ZALA":             "Drone rec. RU (Orlan)",
+        "Merlin-VR":        "Drone rec. RU (Orlan)",
+        "Молнія":           "Drone rec. RU (Orlan)",
+        "Unknown UAV":      "Drone genérico",
+        "Reconnaissance UAV": "Drone rec. RU (Orlan)",
+    }
+
+    df_petro["tipo_arma_petro"] = df_petro["model"].map(MODELO_A_TIPO).fillna("Drone genérico")
+
+    # Agregado diario por tipo desde Petro
+    petro_diario = (df_petro.groupby(["fecha", "tipo_arma_petro"])
+                   .agg(n_lanzados=("launched", "sum"),
+                        n_destruidos=("destroyed", "sum"))
+                   .reset_index())
+
+    # Guardar tabla enriquecida
+    petro_diario.to_csv(DATA_P / "petro_diario_por_tipo.csv", index=False)
+
+    print(f"  ✓ {len(df_petro):,} registros Petro cargados")
+    print(f"  ✓ Rango: {df_petro['fecha'].min().date()} → {df_petro['fecha'].max().date()}")
+    print(f"  ✓ Tipos identificados:")
+    print(df_petro["tipo_arma_petro"].value_counts().head(10).to_string())
+
+    # Estadística de resolución del problema Drone genérico en ACLED
+    n_genericos_acled = (df_drones["tipo_arma"] == "Drone genérico").sum()
+    n_genericos_petro = (df_petro["tipo_arma_petro"] == "Drone genérico").sum()
+    pct_petro_identificado = 100 * (1 - n_genericos_petro / max(len(df_petro), 1))
+    print(f"\n  ACLED 'Drone genérico': {n_genericos_acled:,} eventos ({100*n_genericos_acled/max(len(df_drones),1):.1f}%)")
+    print(f"  Petro 'Unknown': {n_genericos_petro:,} registros — {pct_petro_identificado:.1f}% identificados")
+    print(f"  → Para análisis cuantitativo de tipos usar Petro dataset directamente")
+    print(f"  ✓ petro_diario_por_tipo.csv guardado")
+else:
+    print(f"\n  (Petro dataset no encontrado — ejecuta git pull para obtenerlo)")
