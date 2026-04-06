@@ -1,0 +1,16 @@
+mes,anio,fecha,lanzamientos_total,avg_diario,strike_uav,decoy_uav,intercepciones,hits,hits_avg_diario,tasa_hit_total_pct,tasa_hit_strike_pct,tasa_strike_pct,patron,regiones_principales,tipo_objetivo,ataque_max_dia,fuente
+1,2025,2025-01,2629,84.8,2539,90,2539,90,2.9,3.4,,96.6,produce-lanza diario,"Kyiv,Kharkiv,Odesa","infraestructura energética,residencial",,ISIS-Online/Ukraine AF
+2,2025,2025-02,3904,139.4,3802,102,3802,102,3.64,2.6,,97.4,produce-lanza diario,"Kyiv,Kharkiv,Sumy,Zaporizhzhia",infraestructura energética,,ISIS-Online/Ukraine AF
+3,2025,2025-03,4198,135.4,3821,377,3821,377,12.16,8.97,,91.0,produce-lanza + decoys Gerbera masivos,"Kyiv,Kharkiv,Dnipro","infraestructura energética,industrial",,ISIS-Online/Ukraine AF
+4,2025,2025-04,2422,80.7,2043,379,2043,379,12.63,15.6,,84.4,ceasefire parcial energía 13-mar; menor volumen mayor precisión,"Kyiv,Odesa,Kharkiv,Donetsk",infraestructura energética,,ISIS-Online/Ukraine AF
+5,2025,2025-05,4003,129.1,2362,1641,3289,714,23.03,17.8,,59.0,aumento decoys; Lancet pareja Shahed,"Kyiv,Kharkiv,toda Ucrania","energía,aeropuertos militares",273,ISIS-Online/ACLED/Ukraine AF
+6,2025,2025-06,5438,181.3,3208,2230,4678,760,25.33,14.0,,59.0,ataques cumulativos 5-8 días; Shahed a 5km altitud; multi-vector,toda Ucrania,infraestructura energética,472,ISIS-Online/OPFOR Journal/Ukraine AF
+7,2025,2025-07,6297,203.1,3715,2582,5574,723,23.32,11.5,,59.0,PICO HISTÓRICO mensual; ataques masivos diarios >400 UAVs 4-5x/mes,toda Ucrania,"infraestructura energética,residencial",728,ISIS-Online/Ukraine AF
+8,2025,2025-08,4128,133.2,2436,1692,3448,680,21.94,16.5,,59.0,caída 1-20 ago; recuperación fin mes; pico 9-ago 66% efectividad,toda Ucrania,"infraestructura energética,refinerías",598,ISIS-Online/Ukraine AF
+9,2025,2025-09,5643,188.1,3250,2393,4906,737,24.57,13.1,,57.6,RÉCORD ATAQUE ÚNICO 7-sep 823 UAVs; Geran-3 jet aparece,toda Ucrania,"infraestructura energética,gas",823,ISIS-Online/Ukraine AF
+10,2025,2025-10,5298,170.9,3063,2235,4309,989,31.9,18.7,,57.8,MÁXIMO HITS MENSUALES 989; saturación producción ~5375/mes,toda Ucrania,"infraestructura energética,gas Kharkiv/Poltava",653,ISIS-Online/Ukraine AF
+11,2025,2025-11,5447,181.6,3355,2092,4621,826,27.53,15.2,,61.6,"5 ataques masivos mes; 3 centrados Kyiv; pico 9-nov 46.4%, 11-nov 49.6%","Kyiv,Poltava,oeste Ucrania",infraestructura energética,596,ISIS-Online/Ukraine AF
+12,2025,2025-12,5131,165.5,3065,2066,4245,886,28.58,17.3,28.21,59.7,4 ataques masivos; centrados infraestructura energética; saturación producción confirmada,toda Ucrania,infraestructura energética,653,ISIS-Online/Ukraine AF
+1,2026,2026-01,4442,143.3,2915,1527,3793,649,,14.6,22.26,65.6,sin ataques masivos >450 UAVs; 66% strike ratio (mayor ratio hasta fecha),toda Ucrania,"infraestructura energética,militar",,ISIS-Online Monthly Analysis Feb2026
+2,2026,2026-02,5048,180.3,3029,2019,4393,655,,13.0,,60.0,escalada previa a conflicto US-Iran,toda Ucrania,infraestructura energética,,Euronews AFP estimado
+3,2026,2026-03,6462,208.5,3877,2585,5816,646,,10.0,,60.0,RÉCORD MENSUAL 6462; +28% vs feb; ataque diurno inusual Lviv 24-mar; 90% intercepción,toda Ucrania incluido Lviv,"infraestructura,ciudades",,Euronews AFP 2026-04-02

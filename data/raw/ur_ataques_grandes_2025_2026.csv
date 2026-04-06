@@ -1,0 +1,24 @@
+fecha,uavs_total,strike_uav,misiles_combinados,hits,tasa_hit_pct,regiones,tipo_objetivo,fuente,notas
+2025-05-18,273,161,0,,,toda Ucrania,infraestructura energética,ACLED,uno de primeros ataques record 2025
+2025-05-25,367,,sí,,,toda Ucrania,infraestructura energética,ACLED,ataque combinado UAV+misiles
+2025-05-31,472,,0,,,toda Ucrania,infraestructura energética,ACLED,primer ataque >400 UAVs de 2025
+2025-06-28,,,,,,toda Ucrania,infraestructura energética,OPFOR Journal,mayor asalto aéreo hasta esa fecha; inicia 28-jun noche hasta 29-jun mañana
+2025-07-09,728,450,0,128,17.6,"Kyiv,Kharkiv,Odesa,Dnipro","infraestructura energética,residencial",ISIS-Online/OPFOR Journal,pico julio; tasa intercepción 82.4%
+2025-08-09,,,,,66.0,objetivos cercanos frontera,militar,ISIS-Online,OUTLIER: efectividad excepcional 66%; ataques 100-200 drones/día = 40-50% hit
+2025-09-07,823,810,13,188,22.8,toda Ucrania,infraestructura energética,ISIS-Online,RÉCORD ABSOLUTO GUERRA: 823 UAVs en un solo ataque; 810 Shahed-type
+2025-10-30,653,390,0,,,toda Ucrania,infraestructura energética,ISIS-Online,ataque masivo octubre
+2025-11-08,458,,,52,11.35,"Kyiv,Poltava",infraestructura energética,ISIS-Online,ataque masivo noviembre baja efectividad
+2025-11-09,,,,,46.38,Kyiv,infraestructura energética,ISIS-Online,pico efectividad noviembre 46.38%
+2025-11-11,,,,,49.58,Kyiv,infraestructura energética,ISIS-Online,segundo pico noviembre 49.58%
+2025-11-14,430,,,23,5.35,toda Ucrania,infraestructura energética,ISIS-Online,ataque masivo baja efectividad
+2025-11-19,476,,,34,7.14,toda Ucrania,infraestructura energética,ISIS-Online,ataque masivo
+2025-11-25,464,,,26,5.6,toda Ucrania,infraestructura energética,ISIS-Online,ataque masivo
+2025-11-29,596,,,33,5.87,toda Ucrania,infraestructura energética,ISIS-Online,ataque masivo baja efectividad
+2025-12-06,653,300,0,60,9.2,toda Ucrania,infraestructura energética,ISIS-Online,ataque masivo diciembre; 60 hits de 653 total; 60 de 300 strike = 20%
+2025-12-11,,,,,45.0,Ucrania,infraestructura energética,ISIS-Online,máximo efectividad diciembre 45% (total UAVs)
+2025-12-12,460,270,0,47,10.3,toda Ucrania,infraestructura energética,ISIS-Online,ataque masivo
+2025-12-13,138,85,0,16,11.76,Ucrania,infraestructura energética,ISIS-Online,ataque pequeño-medio alta eficiencia relativa
+2025-12-17,,,,,72.5,Ucrania,infraestructura energética,ISIS-Online,MÁXIMO HISTÓRICO STRIKE UAVs: 72.5% efectividad strike
+2025-12-22,635,400,0,62,9.75,toda Ucrania,infraestructura energética,ISIS-Online,ataque masivo navidad
+2025-12-26,519,300,0,25,4.8,toda Ucrania,infraestructura energética,ISIS-Online,ataque navidad baja efectividad
+2026-03-24,,,,,,Lviv,ciudad UNESCO,Euronews AFP,ataque diurno inusual; Lviv zona UNESCO dañada
